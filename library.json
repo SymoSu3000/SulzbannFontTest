@@ -1,1 +1,13 @@
-
+{
+    "id": "{A52BA4CD-1E35-42D0-8C99-2DB4D0A03B2B}",
+    "name": "FontTest",
+    "type": 3,
+    "vendor": "Sulzbann",
+    "aliases": [
+        "Schriftgrössen Test"
+    ],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "SULZFT"
+}
