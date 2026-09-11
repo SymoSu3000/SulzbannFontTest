@@ -1,1 +1,12 @@
-
+{
+    "id": "{D2A95B2E-3B49-4E62-8A8C-DF2F8A46770A}",
+    "author": "SymoSu3000",
+    "name": "SulzbannFontTest",
+    "url": "https://github.com/SymoSu3000/SulzbannFontTest",
+    "compatibility": {
+        "version": "8.0"
+    },
+    "version": "1.0",
+    "build": 0,
+    "date": 0
+}
