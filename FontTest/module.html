@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<style>
+
+:root {
+
+    --bg-top:
+        #0d2735;
+
+    --bg-bottom:
+        #071822;
+
+    --panel:
+        rgba(
+            17,
+            47,
+            62,
+            0.72
+        );
+
+    --panel-strong:
+        rgba(
+            22,
+            57,
+            73,
+            0.85
+        );
+
+    --border:
+        rgba(
+            105,
+            143,
+            162,
+            0.36
+        );
+
+    --text:
+        #f2f7fa;
+
+    --muted:
+        #a6bbc7;
+
+    --accent:
+        #28c7b7;
+}
+
+
+* {
+    box-sizing:
+        border-box;
+}
+
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background:
+        transparent;
+
+    color:
+        var(--text);
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+}
+
+
+#app {
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   GRUNDLAYOUT
+========================================================= */
+
+.tile {
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--bg-top),
+            var(--bg-bottom)
+        );
+}
+
+
+/* =========================================================
+   KOPF
+========================================================= */
+
+.header {
+
+    flex:
+        0 0 auto;
+
+    display: flex;
+
+    align-items:
+        flex-start;
+
+    justify-content:
+        space-between;
+
+    gap:
+        10px;
+
+    padding:
+        10px
+        12px
+        8px
+        12px;
+
+    border-bottom:
+        1px solid
+        var(--border);
+}
+
+
+.header-left {
+
+    min-width:
+        0;
+}
+
+
+.title {
+
+    font-size:
+        16px;
+
+    line-height:
+        1.1;
+
+    font-weight:
+        700;
+}
+
+
+.subtitle {
+
+    margin-top:
+        3px;
+
+    font-size:
+        10px;
+
+    color:
+        var(--muted);
+}
+
+
+.mode-box {
+
+    flex:
+        0 0 auto;
+
+    padding:
+        5px
+        7px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        7px;
+
+    background:
+        var(--panel);
+}
+
+
+.mode {
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    color:
+        var(--accent);
+
+    text-align:
+        right;
+}
+
+
+.dimensions {
+
+    margin-top:
+        2px;
+
+    font-size:
+        8px;
+
+    color:
+        var(--muted);
+
+    text-align:
+        right;
+}
+
+
+/* =========================================================
+   LISTE
+========================================================= */
+
+.list-wrap {
+
+    flex:
+        1 1 auto;
+
+    min-height:
+        0;
+
+    overflow-y:
+        auto;
+
+    overflow-x:
+        hidden;
+
+    padding:
+        6px
+        8px
+        10px
+        8px;
+}
+
+
+.font-row {
+
+    display: grid;
+
+    grid-template-columns:
+        34px
+        52px
+        minmax(
+            0,
+            1fr
+        );
+
+    align-items:
+        baseline;
+
+    column-gap:
+        7px;
+
+    min-height:
+        28px;
+
+    padding:
+        5px
+        6px;
+
+    border-bottom:
+        1px solid
+        rgba(
+            120,
+            150,
+            166,
+            0.15
+        );
+}
+
+
+.font-row:nth-child(odd) {
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.018
+        );
+}
+
+
+.number {
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    color:
+        var(--accent);
+
+    white-space:
+        nowrap;
+}
+
+
+.px {
+
+    font-size:
+        10px;
+
+    color:
+        var(--muted);
+
+    white-space:
+        nowrap;
+}
+
+
+.sample {
+
+    min-width:
+        0;
+
+    line-height:
+        1.15;
+
+    white-space:
+        nowrap;
+
+    overflow:
+        hidden;
+
+    text-overflow:
+        ellipsis;
+}
+
+
+/* =========================================================
+   TESTGRÖSSEN
+========================================================= */
+
+.s01 { font-size: 8px;  }
+.s02 { font-size: 9px;  }
+.s03 { font-size: 10px; }
+.s04 { font-size: 11px; }
+.s05 { font-size: 12px; }
+.s06 { font-size: 13px; }
+.s07 { font-size: 14px; }
+.s08 { font-size: 15px; }
+.s09 { font-size: 16px; }
+.s10 { font-size: 18px; }
+.s11 { font-size: 20px; }
+.s12 { font-size: 22px; }
+.s13 { font-size: 24px; }
+.s14 { font-size: 26px; }
+.s15 { font-size: 28px; }
+.s16 { font-size: 30px; }
+.s17 { font-size: 32px; }
+
+
+/* =========================================================
+   FETTE TESTZEILEN
+========================================================= */
+
+.bold {
+
+    font-weight:
+        700;
+}
+
+
+/* =========================================================
+   RESPONSIVE MODE LABELS
+========================================================= */
+
+.mode-compact-desktop
+.header {
+
+    padding-top:
+        8px;
+}
+
+
+.mode-compact-desktop
+.title {
+
+    font-size:
+        15px;
+}
+
+
+.mode-expanded-desktop
+.header {
+
+    padding:
+        14px
+        16px
+        10px
+        16px;
+}
+
+
+.mode-expanded-desktop
+.title {
+
+    font-size:
+        20px;
+}
+
+
+.mode-expanded-desktop
+.subtitle {
+
+    font-size:
+        11px;
+}
+
+
+.mode-expanded-desktop
+.list-wrap {
+
+    padding:
+        8px
+        14px
+        14px
+        14px;
+}
+
+
+.mode-expanded-desktop
+.font-row {
+
+    grid-template-columns:
+        42px
+        60px
+        minmax(
+            0,
+            1fr
+        );
+
+    min-height:
+        31px;
+
+    padding:
+        6px
+        8px;
+}
+
+
+.mode-tablet
+.header {
+
+    padding:
+        10px
+        10px
+        8px
+        10px;
+}
+
+
+.mode-tablet
+.title {
+
+    font-size:
+        16px;
+}
+
+
+.mode-mobile
+.header {
+
+    padding:
+        8px
+        9px
+        6px
+        9px;
+}
+
+
+.mode-mobile
+.title {
+
+    font-size:
+        14px;
+}
+
+
+.mode-mobile
+.subtitle {
+
+    display:
+        none;
+}
+
+
+.mode-mobile
+.mode-box {
+
+    padding:
+        4px
+        5px;
+}
+
+
+.mode-mobile
+.font-row {
+
+    grid-template-columns:
+        30px
+        45px
+        minmax(
+            0,
+            1fr
+        );
+
+    column-gap:
+        4px;
+
+    padding:
+        4px;
+
+    min-height:
+        25px;
+}
+
+
+.mode-mobile
+.number,
+.mode-mobile
+.px {
+
+    font-size:
+        9px;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.list-wrap::-webkit-scrollbar {
+
+    width:
+        6px;
+}
+
+
+.list-wrap::-webkit-scrollbar-track {
+
+    background:
+        transparent;
+}
+
+
+.list-wrap::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(
+            150,
+            175,
+            188,
+            0.38
+        );
+
+    border-radius:
+        10px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div
+    id="app"
+    class="tile"
+>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <div class="header">
+
+
+        <div class="header-left">
+
+            <div class="title">
+                Schriftgrössen-Test
+            </div>
+
+            <div class="subtitle">
+                Gleiche Schriftgrössen in allen Responsive-Ansichten
+            </div>
+
+        </div>
+
+
+        <div class="mode-box">
+
+            <div
+                class="mode"
+                id="mode"
+            >
+                —
+            </div>
+
+            <div
+                class="dimensions"
+                id="dimensions"
+            >
+                —
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LISTE
+    ====================================================== -->
+
+    <div class="list-wrap">
+
+
+        <div class="font-row">
+
+            <div class="number">
+                01
+            </div>
+
+            <div class="px">
+                8 px
+            </div>
+
+            <div class="sample s01">
+                Beispieltext · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                02
+            </div>
+
+            <div class="px">
+                9 px
+            </div>
+
+            <div class="sample s02">
+                Beispieltext · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                03
+            </div>
+
+            <div class="px">
+                10 px
+            </div>
+
+            <div class="sample s03">
+                Beispieltext · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                04
+            </div>
+
+            <div class="px">
+                11 px
+            </div>
+
+            <div class="sample s04">
+                Beispieltext · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                05
+            </div>
+
+            <div class="px">
+                12 px
+            </div>
+
+            <div class="sample s05">
+                Beispieltext · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                06
+            </div>
+
+            <div class="px">
+                13 px
+            </div>
+
+            <div class="sample s06">
+                Beispieltext · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                07
+            </div>
+
+            <div class="px">
+                14 px
+            </div>
+
+            <div class="sample s07">
+                Beispieltext · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                08
+            </div>
+
+            <div class="px">
+                15 px
+            </div>
+
+            <div class="sample s08">
+                Beispieltext · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                09
+            </div>
+
+            <div class="px">
+                16 px
+            </div>
+
+            <div class="sample s09">
+                Beispieltext · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                10
+            </div>
+
+            <div class="px">
+                18 px
+            </div>
+
+            <div class="sample s10">
+                Beispieltext · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                11
+            </div>
+
+            <div class="px">
+                20 px
+            </div>
+
+            <div class="sample s11">
+                Beispieltext · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                12
+            </div>
+
+            <div class="px">
+                22 px
+            </div>
+
+            <div class="sample s12">
+                Beispieltext · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                13
+            </div>
+
+            <div class="px">
+                24 px
+            </div>
+
+            <div class="sample s13">
+                Beispieltext · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                14
+            </div>
+
+            <div class="px">
+                26 px
+            </div>
+
+            <div class="sample s14">
+                Beispieltext · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                15
+            </div>
+
+            <div class="px">
+                28 px
+            </div>
+
+            <div class="sample s15">
+                Beispieltext · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                16
+            </div>
+
+            <div class="px">
+                30 px
+            </div>
+
+            <div class="sample s16">
+                Beispieltext · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                17
+            </div>
+
+            <div class="px">
+                32 px
+            </div>
+
+            <div class="sample s17">
+                Beispieltext · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FETT
+        ================================================== -->
+
+
+        <div class="font-row">
+
+            <div class="number">
+                B07
+            </div>
+
+            <div class="px">
+                14 px
+            </div>
+
+            <div class="sample s07 bold">
+                Beispieltext fett · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                B09
+            </div>
+
+            <div class="px">
+                16 px
+            </div>
+
+            <div class="sample s09 bold">
+                Beispieltext fett · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                B10
+            </div>
+
+            <div class="px">
+                18 px
+            </div>
+
+            <div class="sample s10 bold">
+                Beispieltext fett · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                B11
+            </div>
+
+            <div class="px">
+                20 px
+            </div>
+
+            <div class="sample s11 bold">
+                Beispieltext fett · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                B12
+            </div>
+
+            <div class="px">
+                22 px
+            </div>
+
+            <div class="sample s12 bold">
+                Beispieltext fett · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+        <div class="font-row">
+
+            <div class="number">
+                B13
+            </div>
+
+            <div class="px">
+                24 px
+            </div>
+
+            <div class="sample s13 bold">
+                Beispieltext fett · 123.4 kW · 21.5 °C
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+const app =
+    document.getElementById(
+        "app"
+    );
+
+
+const modeElement =
+    document.getElementById(
+        "mode"
+    );
+
+
+const dimensionElement =
+    document.getElementById(
+        "dimensions"
+    );
+
+
+
+function determineMode(
+    width,
+    height
+) {
+
+    /*
+     * Wichtig:
+     * Wir wollen die reale Kachelgrösse testen,
+     * nicht die Browserbreite.
+     */
+
+
+    /*
+     * Mobile
+     */
+
+    if (
+        width < 520
+    ) {
+
+        /*
+         * Eine geöffnete Mobile-Ansicht ist
+         * typischerweise deutlich höher.
+         */
+
+        if (
+            height >= 560
+        ) {
+            return {
+                key:
+                    "mobile",
+
+                label:
+                    "MOBILE DETAIL"
+            };
+        }
+
+
+        return {
+            key:
+                "mobile",
+
+            label:
+                "MOBILE COMPACT"
+        };
+    }
+
+
+
+    /*
+     * Tablet
+     */
+
+    if (
+        width < 900
+    ) {
+
+        return {
+            key:
+                "tablet",
+
+            label:
+                "TABLET"
+        };
+
+    }
+
+
+
+    /*
+     * Grosser Desktop
+     */
+
+    if (
+        height >= 560
+    ) {
+
+        return {
+            key:
+                "expanded-desktop",
+
+            label:
+                "DESKTOP DETAIL"
+        };
+
+    }
+
+
+
+    /*
+     * Normale Desktop-Kachel
+     */
+
+    return {
+        key:
+            "compact-desktop",
+
+        label:
+            "DESKTOP COMPACT"
+    };
+
+}
+
+
+
+function updateResponsiveInfo() {
+
+    const rect =
+        document.documentElement
+            .getBoundingClientRect();
+
+
+    const width =
+        Math.round(
+            rect.width
+        );
+
+
+    const height =
+        Math.round(
+            rect.height
+        );
+
+
+    const mode =
+        determineMode(
+            width,
+            height
+        );
+
+
+    app.className =
+        "tile " +
+        "mode-" +
+        mode.key;
+
+
+    modeElement.textContent =
+        mode.label;
+
+
+    dimensionElement.textContent =
+        width +
+        " × " +
+        height +
+        " px";
+
+}
+
+
+
+const resizeObserver =
+    new ResizeObserver(
+        function () {
+
+            updateResponsiveInfo();
+
+        }
+    );
+
+
+resizeObserver.observe(
+    document.documentElement
+);
+
+
+window.addEventListener(
+    "load",
+    function () {
+
+        updateResponsiveInfo();
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
